@@ -94,12 +94,12 @@ for index, row in df.iterrows():
         name=row["Name"]
     )
 
-    # Generate email body
-    response = llm.invoke(prompt)
-    email_body = response.content
+# response = llm.invoke(prompt)
+# email_body = response.content
 
-    # Send email
-    success = send_email(recipient=recipient_email, body=email_body)
+# For GitHub presentation, just simulate the email
+email_body = f"Hi {row['Name']},\nThis is a sample email for {row['Persona']}."
+
 
     # If sent, update column
     if success:
